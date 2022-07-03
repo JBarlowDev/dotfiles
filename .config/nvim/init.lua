@@ -9,13 +9,14 @@ require'nvim-treesitter.configs'.setup {
   highlight = { enable = true }
 }
 
+require'which-key'.setup()
+
 require('lualine').setup()
 
 local luasnip = require'luasnip'
 require("luasnip.loaders.from_vscode").lazy_load()
 
 local cmp = require'cmp'
-
 
 cmp.setup({
     snippet = {
@@ -56,7 +57,7 @@ cmp.setup({
       end, { "i", "s" }),
     }),
     sources = {
-      --{ name = 'nvim_lsp' },
+      { name = 'nvim_lsp' },
       -- { name = 'vsnip' }, -- For vsnip users.
       { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.

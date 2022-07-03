@@ -43,6 +43,9 @@ use 'rafamadriz/friendly-snippets'
 use "williamboman/nvim-lsp-installer"
 use "neovim/nvim-lspconfig"
 
+-- Util
+use "folke/which-key.nvim"
+
 -- Colour Schemes
 use 'arcticicestudio/nord-vim'
 
