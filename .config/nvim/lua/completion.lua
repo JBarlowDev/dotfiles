@@ -3,7 +3,6 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 local cmp = require'cmp'
 
-
 local kind_icons = {
   Text = "",
   Method = "",
@@ -72,6 +71,7 @@ cmp.setup({
     }),
     sources = {
       { name = 'nvim_lsp' },
+			{ name = 'orgmode' }, -- orgmode plugin
       -- { name = 'vsnip' }, -- For vsnip users.
       { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.

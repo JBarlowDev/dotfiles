@@ -46,11 +46,16 @@ use "neovim/nvim-lspconfig"
 -- Notes
 use 'renerocksai/telekasten.nvim'
 
-use {
-    "nvim-neorg/neorg",
+--use {
+--    "nvim-neorg/neorg",
     -- tag = "latest",
     --ft = "norg",
     --after = {"nvim-treesitter", "nvim-telescope"},
+--}
+
+use {'nvim-orgmode/orgmode', config = function()
+        require('orgmode').setup{}
+end
 }
 
 -- Util
