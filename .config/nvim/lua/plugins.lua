@@ -43,6 +43,16 @@ use 'rafamadriz/friendly-snippets'
 use "williamboman/nvim-lsp-installer"
 use "neovim/nvim-lspconfig"
 
+-- Notes
+use 'renerocksai/telekasten.nvim'
+
+use {
+    "nvim-neorg/neorg",
+    -- tag = "latest",
+    --ft = "norg",
+    --after = {"nvim-treesitter", "nvim-telescope"},
+}
+
 -- Util
 use "folke/which-key.nvim"
 
