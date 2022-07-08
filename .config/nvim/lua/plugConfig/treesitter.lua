@@ -1,4 +1,4 @@
---require('orgmode').setup_ts_grammar()
+require('orgmode').setup_ts_grammar()
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {'lua', 'javascript', 'typescript', 'tsx', 'org'},
@@ -7,3 +7,4 @@ require'nvim-treesitter.configs'.setup {
 			additional_vim_regex_highlighting = {'org'}
   }
 }
+

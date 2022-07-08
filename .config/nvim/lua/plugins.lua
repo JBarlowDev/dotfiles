@@ -63,5 +63,8 @@ use "folke/which-key.nvim"
 
 -- Colour Schemes
 use 'arcticicestudio/nord-vim'
+use 'EdenEast/nightfox.nvim'
+--use 'ful1e5/onedark.nvim'
+use 'navarasu/onedark.nvim'
 
 end)

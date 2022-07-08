@@ -24,10 +24,10 @@ keymap('n', '<Leader>zf', ':lua require("telekasten").find_notes()<CR>', opts)
 keymap('n', '<Leader>z', ':lua require("telekasten").panel()<CR>', opts)
 
 -- Neorg Not using default https://github.com/nvim-neorg/neorg/blob/main/lua/neorg/modules/core/keybinds/keybinds.lua
-keymap('n', '<Leader>otc', ':Neorg keybind norg core.gtd.base.capture<CR>', opts)
-keymap('n', '<Leader>otv', ':Neorg keybind norg core.gtd.base.views<CR>', opts)
-keymap('n', '<Leader>ote', ':Neorg keybind norg core.gtd.base.edit<CR>', opts)
-keymap('n', '<Leader>ott', ':Neorg keybind norg core.norg.qol.todo_items.todo.task_cycle<CR>', opts)
-keymap('n', '<Leader>oo', ':Neorg keybind norg core.norg.esupports.hop.hop-link<CR>', opts)
+--keymap('n', '<Leader>otc', ':Neorg keybind norg core.gtd.base.capture<CR>', opts)
+--keymap('n', '<Leader>otv', ':Neorg keybind norg core.gtd.base.views<CR>', opts)
+--keymap('n', '<Leader>ote', ':Neorg keybind norg core.gtd.base.edit<CR>', opts)
+--keymap('n', '<Leader>ott', ':Neorg keybind norg core.norg.qol.todo_items.todo.task_cycle<CR>', opts)
+--keymap('n', '<Leader>oo', ':Neorg keybind norg core.norg.esupports.hop.hop-link<CR>', opts)
 
 
