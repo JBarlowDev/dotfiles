@@ -15,6 +15,7 @@ require('lualine').setup()
 require('plugConfig.notes')
 --require('plugConfig.neorg')
 require('plugConfig.orgmode')
+require('plugConfig.toggleterm')
 
 --require('onedark').setup {
 --    style = 'dark'

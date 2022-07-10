@@ -30,4 +30,7 @@ keymap('n', '<Leader>z', ':lua require("telekasten").panel()<CR>', opts)
 --keymap('n', '<Leader>ott', ':Neorg keybind norg core.norg.qol.todo_items.todo.task_cycle<CR>', opts)
 --keymap('n', '<Leader>oo', ':Neorg keybind norg core.norg.esupports.hop.hop-link<CR>', opts)
 
+-- Toggle term
+keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)
+keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 

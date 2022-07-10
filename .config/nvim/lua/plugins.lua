@@ -58,6 +58,9 @@ use {'nvim-orgmode/orgmode', config = function()
 end
 }
 
+-- Terminal
+use 'akinsho/toggleterm.nvim'
+
 -- Util
 use "folke/which-key.nvim"
 
