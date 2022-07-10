@@ -111,10 +111,10 @@
   :config (projectile-mode)
   :custom ((projectile-completion-system 'ivy))
   :init
+  (setq projectile-switch-project-action #'counsel-dired)
   (when (file-directory-p "~/workspace")
     (setq projectile-project-search-path '("~/workspace")))
   )
-
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
 
@@ -127,6 +127,26 @@
   :after org
   :hook (org-mode . org-bullets-mode))
 
+(setq org-agenda-files
+      '("~/workspace/jbarlow-website/org-files/tasks.org"))
+
+;; LSP
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :init
+  (setq lsp-keymap-prefix "SPC n")
+  :config
+  (lsp-enable-which-key-integration t))
+
+;; npm i -g typescript-language-server; npm i -g typescript
+;; M-xlsp-install-serverRETts-lsRET
+(use-package typescript-mode
+  :mode "\\.ts\\'"
+  :hook (typescript-mode . lsp-deferred)
+  :config
+  (setq typescript-indent-level 2))
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+
 
 
 (use-package general
@@ -136,20 +156,23 @@
   (stix/leader-keys
     :keymaps 'normal
     ;;"bs" 'switch-to-buffer
-    "b"  '(:wk "Buffer")
-    "bk" 'kill-buffer
-    "bs" 'counsel-switch-buffer ;; opens preview + ?
-    "f"  '(:wk "Find")
-    "fc" '(lambda () (interactive) (find-file "~/.config/emacs"))
-    "ff" 'find-file
-    "fg" 'counsel-projectile-rg
-    "fp" 'counsel-projectile-find-file
-    "gg" 'magit-status
-    "o"  '(:wk "Org")
-    "oa" 'org-agenda
-    "oc" 'org-capture
-    "p"  'projectile-command-map
-    "s"  'save-buffer
+    "b"   '(:wk "Buffer")
+    "bk"  'kill-buffer
+    "bs"  'counsel-switch-buffer ;; opens preview + ?
+    "f"   '(:wk "Find")
+    "fc"  '(lambda () (interactive) (find-file "~/.config/emacs"))
+    "ff"  'find-file
+    "fg"  'counsel-projectile-rg
+    "fp"  'counsel-projectile-find-file
+    "gg"  'magit-status
+    "o"   '(:wk "Org")
+    "oa"  'org-agenda
+    "oc"  'org-capture
+    "oi"  '(:wk "Insert")
+    "ois" 'org-schedule
+    "oid" 'org-deadline
+    "p"   'projectile-command-map
+    "s"   'save-buffer
     ))
 
 
@@ -160,7 +183,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(evil-collection evil-magit magit counsel-projectile general helpful ivy-rich which-key rainbow-delimiters rainbow-delimeters all-the-icons doom-modeline use-package ivy evil doom-themes)))
+   '(typescript-mode lsp-mode evil-collection evil-magit magit counsel-projectile general helpful ivy-rich which-key rainbow-delimiters rainbow-delimeters all-the-icons doom-modeline use-package ivy evil doom-themes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
