@@ -10,7 +10,7 @@
 ;; Keymaps
 ;; Let esc quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-(global-set-key (kbd "C-M-n") 'counsel-switch-buffer)
+;;(global-set-key (kbd "C-M-n") 'counsel-switch-buffer)
 
 ;; Line numbers
 (column-number-mode)
@@ -57,19 +57,19 @@
          (load-theme 'doom-one t)
 )
 
-;; Ivy for completion
-(use-package ivy
-  :diminish
-  :config
-  (ivy-mode 1))
 
-(use-package counsel
-  :bind (("M-x" . counsel-M-x))
-  )
-
-(use-package ivy-rich
+;; Completion: Using vertico for completion https://github.com/minad/vertico
+(use-package vertico
   :init
-  (ivy-rich-mode 1))
+  (vertico-mode))
+
+(use-package marginalia
+  :after vertico
+  :init
+  (marginalia-mode))
+
+
+;; End Completion
 
 
 ;; Mode line at bottom of screen
@@ -91,13 +91,13 @@
 
 ;; Improve help pages (need to actually understand this)
 (use-package helpful
-  :custom
-  (counsel-describe-function-function #'helpful-callable)
-  (counsel-describe-variable-function #'helpful-variable)
+;;  :custom
+;;  (counsel-describe-function-function #'helpful-callable)
+;;  (counsel-describe-variable-function #'helpful-variable)
   :bind
-  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-function] . helpful-function)
   ([remap describe-command] . helpful-command)
-  ([remap describe-variable] . counsel-describe-variable)
+  ([remap describe-variable] . helpful-variable)
   ([remap describe-key] . helpful-key))
 
 
@@ -109,14 +109,10 @@
 
 (use-package projectile
   :config (projectile-mode)
-  :custom ((projectile-completion-system 'ivy))
   :init
-  (setq projectile-switch-project-action #'counsel-dired)
   (when (file-directory-p "~/workspace")
     (setq projectile-project-search-path '("~/workspace")))
   )
-(use-package counsel-projectile
-  :config (counsel-projectile-mode))
 
 
 (use-package magit)
@@ -145,7 +141,6 @@
   :hook (typescript-mode . lsp-deferred)
   :config
   (setq typescript-indent-level 2))
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 
 
 
@@ -158,12 +153,12 @@
     ;;"bs" 'switch-to-buffer
     "b"   '(:wk "Buffer")
     "bk"  'kill-buffer
-    "bs"  'counsel-switch-buffer ;; opens preview + ?
+    "bs"  'switch-to-buffer ;; opens preview + ?
     "f"   '(:wk "Find")
     "fc"  '(lambda () (interactive) (find-file "~/.config/emacs"))
     "ff"  'find-file
-    "fg"  'counsel-projectile-rg
-    "fp"  'counsel-projectile-find-file
+    ;;"fg"  'counsel-projectile-rg
+    ;;"fp"  'counsel-projectile-find-file
     "gg"  'magit-status
     "o"   '(:wk "Org")
     "oa"  'org-agenda
@@ -182,8 +177,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   '("/Users/barljam/workspace/jbarlow-website/org-files/tasks.org"))
  '(package-selected-packages
-   '(typescript-mode lsp-mode evil-collection evil-magit magit counsel-projectile general helpful ivy-rich which-key rainbow-delimiters rainbow-delimeters all-the-icons doom-modeline use-package ivy evil doom-themes)))
+   '(typescript-mode lsp-mode evil-collection evil-magit magit general helpful which-key rainbow-delimiters rainbow-delimeters all-the-icons doom-modeline use-package evil doom-themes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
