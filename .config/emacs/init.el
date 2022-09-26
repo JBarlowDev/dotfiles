@@ -1,6 +1,9 @@
+(load-file "~/.emacs.d/workVar.el")
+
 ;; Hide the start up message
 (setq inhibit-startup-message t)
 (setq visible-bell t)
+(setq make-backup-files nil)
 
 ;; Ui tweaks
 (scroll-bar-mode -1)
@@ -10,14 +13,13 @@
 ;; Keymaps
 ;; Let esc quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-;;(global-set-key (kbd "C-M-n") 'counsel-switch-buffer)
 
 ;; Line numbers
 (column-number-mode)
 (global-display-line-numbers-mode t)
 (setq display-line-numbers 'relative)
 ;; Allow disabling on certain buffers
-(dolist (mode '(shell-mode-hook))
+(dolist (mode '(shell-mode-hook eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 ;; Packages
@@ -34,9 +36,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-(defun stix/evil-hook ()
-  (dolist (mode '(dired-mode))
-  (add-to-list 'evil-emacs-state-modes mode)))
 
 ;; Get evil
 (use-package evil
@@ -49,7 +48,12 @@
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
   )
 
-(use-package evil-collection)
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init 'org)
+  (evil-collection-init 'helpful)
+  (evil-collection-init 'dired))
 
 ;; Themes using doom 
 (use-package doom-themes
@@ -67,6 +71,13 @@
   :after vertico
   :init
   (marginalia-mode))
+
+(use-package consult)
+
+(use-package orderless
+:custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
 
 
 ;; End Completion
@@ -91,9 +102,6 @@
 
 ;; Improve help pages (need to actually understand this)
 (use-package helpful
-;;  :custom
-;;  (counsel-describe-function-function #'helpful-callable)
-;;  (counsel-describe-variable-function #'helpful-variable)
   :bind
   ([remap describe-function] . helpful-function)
   ([remap describe-command] . helpful-command)
@@ -109,22 +117,52 @@
 
 (use-package projectile
   :config (projectile-mode)
-  :init
-  (when (file-directory-p "~/workspace")
-    (setq projectile-project-search-path '("~/workspace")))
+;;  :init
+;;  (when (file-directory-p "~/workspace/")
+;;    (setq projectile-project-search-path '("~/workspace/")))
   )
+;;(setq projectile-ignored-projects "~/") ;Stop root listed as project
+(setq projectile-track-known-projects-automatically nil)
+(add-to-list 'projectile-globally-ignored-directories "node_modules")
+(add-to-list 'projectile-globally-ignored-directories "build")
 
+
+(use-package rg)
 
 (use-package magit)
 
-
+;; ORG Start
 (use-package org)
 (use-package org-bullets
   :after org
-  :hook (org-mode . org-bullets-mode))
+  :hook ((org-mode . org-bullets-mode)
+	 (org-mode . org-indent-mode)))
 
 (setq org-agenda-files
-      '("~/workspace/jbarlow-website/org-files/tasks.org"))
+      (list my-agenda-files))
+(setq org-default-notes-file (concat org-directory "/todo.org"))
+
+(use-package org-roam
+  :custom
+  (org-roam-directory (file-truename "~/org-roam/"))
+  :config
+  (org-roam-setup)
+  (org-roam-db-autosync-mode))
+
+;; Normal capture templates - not roam
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/notes.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         "* %U %? %i")
+	("d" "Deadline Task" entry (file+headline "~/org/todo.org" "Tasks")
+	 "* TODO  %?\n   DEADLINE: %t   %i\n   %a")))
+
+;; Needed to show tags on find / search for tags 
+(setq org-roam-node-display-template
+      (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+
+;; ORG End
 
 ;; LSP
 (use-package lsp-mode
@@ -149,23 +187,30 @@
   (general-create-definer stix/leader-keys
 			  :prefix "SPC")
   (stix/leader-keys
-    :keymaps 'normal
+    :states 'normal
+    :keymaps 'override
     ;;"bs" 'switch-to-buffer
     "b"   '(:wk "Buffer")
+    "bb"  'switch-to-buffer
     "bk"  'kill-buffer
     "bs"  'switch-to-buffer ;; opens preview + ?
     "f"   '(:wk "Find")
-    "fc"  '(lambda () (interactive) (find-file "~/.config/emacs"))
+    "fc"  '(lambda () (interactive) (find-file my-config-folder))
     "ff"  'find-file
-    ;;"fg"  'counsel-projectile-rg
-    ;;"fp"  'counsel-projectile-find-file
+    "fr"  'org-roam-node-find
     "gg"  'magit-status
     "o"   '(:wk "Org")
     "oa"  'org-agenda
     "oc"  'org-capture
     "oi"  '(:wk "Insert")
-    "ois" 'org-schedule
     "oid" 'org-deadline
+    "oil" 'org-insert-link
+    "ois" 'org-schedule
+    "or"  '(:wk "Roam")
+    "orb" 'org-roam-buffer-toggle
+    "orc" 'org-roam-capture
+    "orf" 'org-roam-node-find
+    "ori" 'org-roam-node-insert
     "p"   'projectile-command-map
     "s"   'save-buffer
     ))
@@ -177,10 +222,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   '("/Users/barljam/workspace/jbarlow-website/org-files/tasks.org"))
  '(package-selected-packages
-   '(typescript-mode lsp-mode evil-collection evil-magit magit general helpful which-key rainbow-delimiters rainbow-delimeters all-the-icons doom-modeline use-package evil doom-themes)))
+   '(org-roam rg emacs-rg orderless consult typescript-mode lsp-mode evil-collection evil-magit magit general helpful which-key rainbow-delimiters rainbow-delimeters all-the-icons doom-modeline use-package evil doom-themes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
