@@ -1,4 +1,4 @@
-(load-file "~/.emacs.d/workVar.el")
+(load-file "~/.config/my-emacs/homeVar.el")
 
 ;; Hide the start up message
 (setq inhibit-startup-message t)
@@ -126,9 +126,10 @@
 (add-to-list 'projectile-globally-ignored-directories "node_modules")
 (add-to-list 'projectile-globally-ignored-directories "build")
 
-
+;; Better grep rip-grep
 (use-package rg)
 
+;; Git 
 (use-package magit)
 
 ;; ORG Start
