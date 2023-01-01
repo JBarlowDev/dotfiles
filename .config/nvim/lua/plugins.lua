@@ -43,20 +43,14 @@ use 'rafamadriz/friendly-snippets'
 use "williamboman/nvim-lsp-installer"
 use "neovim/nvim-lspconfig"
 
--- Notes
-use 'renerocksai/telekasten.nvim'
-
---use {
---    "nvim-neorg/neorg",
-    -- tag = "latest",
-    --ft = "norg",
-    --after = {"nvim-treesitter", "nvim-telescope"},
---}
-
 use {'nvim-orgmode/orgmode', config = function()
         require('orgmode').setup{}
 end
 }
+
+
+-- Workspace
+use 'natecraddock/workspaces.nvim'
 
 -- Terminal
 use 'akinsho/toggleterm.nvim'

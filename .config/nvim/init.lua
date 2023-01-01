@@ -12,12 +12,14 @@ require'which-key'.setup()
 
 require('lualine').setup()
 
-require('plugConfig.notes')
---require('plugConfig.neorg')
 require('plugConfig.orgmode')
 require('plugConfig.toggleterm')
+require('plugConfig.workspaces')
+require('plugConfig.nvim-tree')
+require('plugConfig.telescope')
 
---require('onedark').setup {
---    style = 'dark'
---}
---require('onedark').load()
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
+
