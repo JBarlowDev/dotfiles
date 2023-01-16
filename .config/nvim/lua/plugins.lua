@@ -15,6 +15,8 @@ use {
   requires = { {'nvim-lua/plenary.nvim'} }
 }
 
+use { 'nvim-telescope/telescope-ui-select.nvim' }
+
 -- Treesitter
 use {
   'nvim-treesitter/nvim-treesitter',
@@ -52,6 +54,9 @@ end
 -- Workspace
 use 'natecraddock/workspaces.nvim'
 
+-- Bufferline
+use 'akinsho/bufferline.nvim'
+
 -- Terminal
 use 'akinsho/toggleterm.nvim'
 
@@ -59,8 +64,8 @@ use 'akinsho/toggleterm.nvim'
 use "folke/which-key.nvim"
 
 -- Colour Schemes
-use 'arcticicestudio/nord-vim'
-use 'EdenEast/nightfox.nvim'
+--use 'arcticicestudio/nord-vim'
+--use 'EdenEast/nightfox.nvim'
 --use 'ful1e5/onedark.nvim'
 use 'navarasu/onedark.nvim'
 

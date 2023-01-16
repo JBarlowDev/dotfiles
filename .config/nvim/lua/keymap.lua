@@ -12,17 +12,20 @@ keymap('n', '<Leader>s', ':w<CR>', opts)
 -- Nvim Tree
 keymap('n', '<Leader>tt', ':NvimTreeToggle<CR>', opts)
 
+-- Buffers
+keymap('n', '<Leader>bb', ':Telescope buffers<CR>', opts)
+keymap('n', '<Leader>bn', ':bn<CR>', opts)
+keymap('n', '<Leader>bp', ':bp<CR>', opts)
+keymap('n', '<Leader>bl', ':bl<CR>', opts)
+keymap('n', '<Leader>br', ':bd<CR>', opts)
+
 -- Telescope
-keymap('n', '<Leader>ff', ':Telescope find_files<CR>', opts)
+keymap('n', '<Leader>fb', ':Telescope buffers<CR>', opts)
+keymap('n', '<Leader>ff', ':Telescope find_files hidden=true<CR>', opts)
 keymap('n', '<Leader>fg', ':Telescope live_grep<CR>', opts)
+keymap('n', '<Leader>gs', ':Telescope git_status<CR>', opts)
 keymap('n', '<Leader>fs', ':Telescope grep_string<CR>', opts)
 keymap('n', '<Leader>fw', ':Telescope workspaces<CR>', opts)
-
-
--- Notes (telekasten)
-keymap('n', '<Leader>zf', ':lua require("telekasten").find_notes()<CR>', opts)
-
-keymap('n', '<Leader>z', ':lua require("telekasten").panel()<CR>', opts)
 
 -- Toggle term
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)

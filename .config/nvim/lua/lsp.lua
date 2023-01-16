@@ -57,8 +57,10 @@ end
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>fo', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>fo', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 end
+
+--require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())
 
 local lsp_flags = {
   debounce_text_changes = 150,
@@ -70,7 +72,7 @@ require('lspconfig')['sumneko_lua'].setup {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { 'vim' },
+        globals = { 'vim', 'use' },
       }
     }
   }
