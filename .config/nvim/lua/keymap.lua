@@ -31,3 +31,6 @@ keymap('n', '<Leader>fw', ':Telescope workspaces<CR>', opts)
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)
 keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 
+
+-- lsp 
+keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)

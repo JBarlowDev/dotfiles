@@ -45,6 +45,9 @@ use 'rafamadriz/friendly-snippets'
 use "williamboman/nvim-lsp-installer"
 use "neovim/nvim-lspconfig"
 
+-- Scala
+use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
+
 use {'nvim-orgmode/orgmode', config = function()
         require('orgmode').setup{}
 end
