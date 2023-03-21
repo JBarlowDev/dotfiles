@@ -7,6 +7,7 @@ vim.g.maplocalleader = " "
 
 -- Helpers
 keymap('n', '<Leader>s', ':w<CR>', opts)
+--keymap('i', 'tn', '<ESC>', opts)
 
 
 -- Nvim Tree
@@ -17,7 +18,7 @@ keymap('n', '<Leader>bb', ':Telescope buffers<CR>', opts)
 keymap('n', '<Leader>bn', ':bn<CR>', opts)
 keymap('n', '<Leader>bp', ':bp<CR>', opts)
 keymap('n', '<Leader>bl', ':bl<CR>', opts)
-keymap('n', '<Leader>br', ':bd<CR>', opts)
+keymap('n', '<Leader>bd', ':bd<CR>', opts)
 
 -- Telescope
 keymap('n', '<Leader>fb', ':Telescope buffers<CR>', opts)

@@ -42,7 +42,7 @@ use 'saadparwaiz1/cmp_luasnip'
 use 'rafamadriz/friendly-snippets'
 
 -- LSP
-use "williamboman/nvim-lsp-installer"
+use "williamboman/mason.nvim"
 use "neovim/nvim-lspconfig"
 
 -- Scala
@@ -62,6 +62,9 @@ use 'akinsho/bufferline.nvim'
 
 -- Terminal
 use 'akinsho/toggleterm.nvim'
+
+-- Git
+use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
 -- Util
 use "folke/which-key.nvim"

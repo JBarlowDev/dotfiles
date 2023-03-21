@@ -1,4 +1,4 @@
-require("nvim-lsp-installer").setup {}
+require("mason").setup()
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -66,7 +66,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-require('lspconfig')['sumneko_lua'].setup {
+require('lspconfig')['lua_ls'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   settings = {
