@@ -1,4 +1,5 @@
 require("mason").setup()
+require("mason-lspconfig").setup()
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -79,6 +80,11 @@ require('lspconfig')['lua_ls'].setup {
 }
 
 require('lspconfig')['tsserver'].setup {
+  on_attach = on_attach,
+  flags = lsp_flags
+}
+
+require('lspconfig')['rust_analyzer'].setup{
   on_attach = on_attach,
   flags = lsp_flags
 }

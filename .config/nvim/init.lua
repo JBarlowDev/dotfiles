@@ -16,6 +16,7 @@ require('plugConfig.telescope')
 require('plugConfig.whichKey')
 require('plugConfig.bufferline')
 require('plugConfig.metals')
+require('plugConfig.autopairs')
 
 require('onedark').setup {
     style = 'darker'

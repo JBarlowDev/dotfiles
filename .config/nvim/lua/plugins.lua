@@ -23,7 +23,6 @@ use {
   run = ':TSUpdate'
 }
 
-
 -- Status Line
 use {
   'nvim-lualine/lualine.nvim',
@@ -43,6 +42,7 @@ use 'rafamadriz/friendly-snippets'
 
 -- LSP
 use "williamboman/mason.nvim"
+use "williamboman/mason-lspconfig.nvim"
 use "neovim/nvim-lspconfig"
 
 -- Scala
@@ -52,7 +52,6 @@ use {'nvim-orgmode/orgmode', config = function()
         require('orgmode').setup{}
 end
 }
-
 
 -- Workspace
 use 'natecraddock/workspaces.nvim'
@@ -68,6 +67,7 @@ use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
 -- Util
 use "folke/which-key.nvim"
+use "windwp/nvim-autopairs"
 
 -- Colour Schemes
 --use 'arcticicestudio/nord-vim'

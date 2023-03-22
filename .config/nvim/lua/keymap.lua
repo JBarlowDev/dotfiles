@@ -31,6 +31,7 @@ keymap('n', '<Leader>fw', ':Telescope workspaces<CR>', opts)
 -- Toggle term
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)
 keymap('t', '<ESC>', '<C-\\><C-n>', opts)
+keymap('t', '<C-w>', '<C-\\><C-n><C-w>', opts)
 
 
 -- lsp 
