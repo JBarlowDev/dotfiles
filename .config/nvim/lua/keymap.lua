@@ -27,12 +27,15 @@ keymap('n', '<Leader>fg', ':Telescope live_grep<CR>', opts)
 keymap('n', '<Leader>gs', ':Telescope git_status<CR>', opts)
 keymap('n', '<Leader>fs', ':Telescope grep_string<CR>', opts)
 keymap('n', '<Leader>fw', ':Telescope workspaces<CR>', opts)
+keymap('n', '<Leader>fd', ':Telescope diagnostics<CR>', opts)
 
 -- Toggle term
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)
 keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 keymap('t', '<C-w>', '<C-\\><C-n><C-w>', opts)
 
+keymap('n', '<Leader>gR', ':Telescope lsp_references<CR>', opts)
+
 
 -- lsp 
-keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+-- keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)

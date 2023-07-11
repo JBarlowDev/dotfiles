@@ -44,14 +44,21 @@ use 'rafamadriz/friendly-snippets'
 use "williamboman/mason.nvim"
 use "williamboman/mason-lspconfig.nvim"
 use "neovim/nvim-lspconfig"
+use "j-hui/fidget.nvim"
 
 -- Scala
 use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 
-use {'nvim-orgmode/orgmode', config = function()
-        require('orgmode').setup{}
-end
+--use {'nvim-orgmode/orgmode', config = function()
+--        require('orgmode').setup{}
+--end
+--}
+
+use {
+  "nvim-neorg/neorg",
+  run = ":Neorg sync-parsers"
 }
+
 
 -- Workspace
 use 'natecraddock/workspaces.nvim'
@@ -68,6 +75,7 @@ use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 -- Util
 use "folke/which-key.nvim"
 use "windwp/nvim-autopairs"
+use "terrortylor/nvim-comment"
 
 -- Colour Schemes
 --use 'arcticicestudio/nord-vim'

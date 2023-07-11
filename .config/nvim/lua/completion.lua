@@ -71,7 +71,7 @@ cmp.setup({
     }),
     sources = {
       { name = 'nvim_lsp' },
-			{ name = 'orgmode' }, -- orgmode plugin
+			--{ name = 'orgmode' }, -- orgmode plugin
       -- { name = 'vsnip' }, -- For vsnip users.
       { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
