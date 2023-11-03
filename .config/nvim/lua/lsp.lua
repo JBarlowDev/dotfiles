@@ -60,6 +60,7 @@ end
   --vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space><space>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>cd', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 end
 
 --require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())
