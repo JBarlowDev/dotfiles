@@ -1,4 +1,4 @@
-require('plugins')
+require('lazyplug')
 require('keymap')
 require('options')
 require("lsp")
@@ -14,11 +14,11 @@ require('plugConfig.nvim-tree')
 require('plugConfig.telescope')
 require('plugConfig.whichKey')
 require('plugConfig.bufferline')
-require('plugConfig.metals')
+--require('plugConfig.metals')
 require('plugConfig.autopairs')
 require("plugConfig.comment")
 require("plugConfig.fidget")
-require("plugConfig.neorg")
+--require("plugConfig.neorg")
 
 require('onedark').setup {
   style = 'darker'
