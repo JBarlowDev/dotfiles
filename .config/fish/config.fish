@@ -4,6 +4,9 @@ end
 
 
 abbr g 'git status'
+abbr gd 'git diff'
+
+abbr lg 'lazygit'
 
 
 set fish_greeting
