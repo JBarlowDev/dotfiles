@@ -65,5 +65,12 @@ require("lazy").setup({
   --theme
   {
     'navarasu/onedark.nvim',
+  },
+
+  --fluff
+  -- TODO: telescope-ui-select
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" }
   }
 })
