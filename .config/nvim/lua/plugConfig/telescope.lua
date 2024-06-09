@@ -15,6 +15,12 @@ telescope.setup {
       ['<c-d>'] = require('telescope.actions').delete_buffer
     }
   },
+  pickers = {
+    buffers = {
+      sort_lastused = true,
+      sort_mru = true
+    }
+  },
   extensions = {
     ["ui-select"] = {
       require("telescope.themes").get_cursor()

@@ -60,7 +60,7 @@ require("lazy").setup({
   { 'akinsho/toggleterm.nvim' },
   { 'folke/which-key.nvim' },
   { 'windwp/nvim-autopairs' },
-  { 'terrortylor/nvim-comment' },
+  -- { 'terrortylor/nvim-comment' },
 
   --theme
   {
@@ -68,9 +68,15 @@ require("lazy").setup({
   },
 
   --fluff
-  -- TODO: telescope-ui-select
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" }
-  }
+  },
+
+  { 'echasnovski/mini.nvim', version = false },
+
+  -- Could be cool maybe
+  -- {
+  --   "tris203/precognition.nvim",
+  -- }
 })

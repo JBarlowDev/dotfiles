@@ -5,30 +5,30 @@ local cmp = require'cmp'
 
 local kind_icons = {
   Text = "",
-  Method = "",
-  Function = "",
+  Method = "󰆧",
+  Function = "󰊕",
   Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "ﴯ",
+  Field = "󰇽",
+  Variable = "󰂡",
+  Class = "󰠱",
   Interface = "",
   Module = "",
-  Property = "ﰠ",
+  Property = "󰜢",
   Unit = "",
-  Value = "",
+  Value = "󰎠",
   Enum = "",
-  Keyword = "",
+  Keyword = "󰌋",
   Snippet = "",
-  Color = "",
-  File = "",
+  Color = "󰏘",
+  File = "󰈙",
   Reference = "",
-  Folder = "",
+  Folder = "󰉋",
   EnumMember = "",
-  Constant = "",
+  Constant = "󰏿",
   Struct = "",
   Event = "",
-  Operator = "",
-  TypeParameter = ""
+  Operator = "󰆕",
+  TypeParameter = "󰅲"
 }
 
 cmp.setup({
@@ -46,7 +46,8 @@ cmp.setup({
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<C-CR>'] = cmp.mapping.confirm({ select = true }),
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
