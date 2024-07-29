@@ -1,7 +1,7 @@
--- Changes s 
+-- Changes s
 require('mini.surround').setup()
 
--- Look to add brackets with spaces 
+-- Look to add brackets with spaces
 -- require('mini.surround').setup({
 --   custom_aurroundings = {
 --     -- Lua long brackets
@@ -20,3 +20,5 @@ require('mini.ai').setup()
 
 require('mini.comment').setup()
 
+require('mini.jump').setup()
+require('mini.jump2d').setup()

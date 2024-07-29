@@ -4,10 +4,10 @@ require 'which-key'.setup()
 
 local wk = require("which-key")
 
-wk.register({
-  b = { name = "buffer" },
-  f = { name = "find" },
-  o = { name = "org" },
-  w = { name = "workspace" },
-  ["<space>"] = { name = "extra" }
-}, { prefix = "<leader>" })
+wk.add({
+  { "<leader><space>", group = "extra" },
+  { "<leader>b",       group = "buffer" },
+  { "<leader>f",       group = "find" },
+  { "<leader>o",       group = "org" },
+  { "<leader>w",       group = "workspace" },
+})

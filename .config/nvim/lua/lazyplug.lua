@@ -66,7 +66,6 @@ require("lazy").setup({
   {
     'navarasu/onedark.nvim',
   },
-
   --fluff
   {
     "folke/todo-comments.nvim",
