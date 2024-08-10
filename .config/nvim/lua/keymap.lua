@@ -21,6 +21,7 @@ keymap('n', '<Leader>bn', ':bn<CR>', opts)
 keymap('n', '<Leader>bp', ':bp<CR>', opts)
 keymap('n', '<Leader>bl', ':bl<CR>', opts)
 keymap('n', '<Leader>bd', ':bd<CR>', opts)
+keymap('n', '<Leader>bk', ':bd<CR>', opts)
 
 -- Telescope
 keymap('n', '<Leader>fb', ':Telescope buffers sort_lastused=true<CR>', opts)
@@ -35,6 +36,9 @@ keymap('n', '<Leader>fd', ':Telescope diagnostics<CR>', opts)
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)
 keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 keymap('t', '<C-w>', '<C-\\><C-n><C-w>', opts)
+
+-- Obsidian
+keymap('n', '<Leader>of', ':ObsidianQuickSwitch<CR>', opts)
 
 -- keymap('n', '<Leader>gR', ':Telescope lsp_references<CR>', opts)
 

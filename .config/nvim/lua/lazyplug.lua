@@ -22,7 +22,7 @@ require("lazy").setup({
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' }
-	},
+  },
   {
     'nvim-telescope/telescope-ui-select.nvim'
   },
@@ -36,7 +36,7 @@ require("lazy").setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons', opt = true }
   },
-  -- Completion 
+  -- Completion
   { 'hrsh7th/nvim-cmp' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },
@@ -73,6 +73,13 @@ require("lazy").setup({
   },
 
   { 'echasnovski/mini.nvim', version = false },
+
+  -- Notes
+  {
+    "epwalsh/obsidian.nvim",
+    lazy = true,
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
 
   -- Could be cool maybe
   -- {

@@ -9,3 +9,6 @@ vim.o.expandtab = true
 vim.o.shell = "zsh"
 
 vim.o.clipboard = "unnamedplus"
+
+-- For obsidian
+vim.o.conceallevel = 2

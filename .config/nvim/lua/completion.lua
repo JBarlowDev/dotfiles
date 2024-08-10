@@ -30,7 +30,6 @@ local kind_icons = {
   Operator = "󰆕",
   TypeParameter = "󰅲"
 }
-
 cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine

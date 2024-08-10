@@ -14,6 +14,7 @@ require('plugConfig.nvim-tree')
 require('plugConfig.telescope')
 require('plugConfig.whichKey')
 require('plugConfig.bufferline')
+require('plugConfig.obsidian')
 --require('plugConfig.metals')
 
 -- Try without it, more anoying than just typing
@@ -28,6 +29,8 @@ require('onedark').setup {
   style = 'darker'
 }
 require('onedark').load()
+
+
 
 -- Simple highlight on yank while getting used to motions
 vim.api.nvim_create_autocmd('TextYankPost', {
