@@ -38,7 +38,7 @@ keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 keymap('t', '<C-w>', '<C-\\><C-n><C-w>', opts)
 
 -- Obsidian
-keymap('n', '<Leader>of', ':ObsidianQuickSwitch<CR>', opts)
+-- keymap('n', '<Leader>of', ':ObsidianQuickSwitch<CR>', opts)
 
 -- keymap('n', '<Leader>gR', ':Telescope lsp_references<CR>', opts)
 

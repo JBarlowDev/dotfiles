@@ -29,8 +29,6 @@ require("lsp")
 -- }
 -- require('onedark').load()
 
--- TODO  s
-
 -- Simple highlight on yank while getting used to motions
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking',

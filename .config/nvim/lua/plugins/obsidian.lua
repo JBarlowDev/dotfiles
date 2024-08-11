@@ -14,5 +14,8 @@ return {
         return title
       end,
     },
+    keys = {
+      { "<leader>of", "<cmd>ObsidianQuickSwitch<CR>", desc = "Open Note" }
+    }
   },
 }
