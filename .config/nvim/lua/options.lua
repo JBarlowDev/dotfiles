@@ -10,5 +10,7 @@ vim.o.shell = "zsh"
 
 vim.o.clipboard = "unnamedplus"
 
+vim.o.colorcolumn = '120'
+
 -- For obsidian
 vim.o.conceallevel = 2
