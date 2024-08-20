@@ -12,5 +12,7 @@ vim.o.clipboard = "unnamedplus"
 
 vim.o.colorcolumn = '120'
 
+vim.o.autoindent = true
+
 -- For obsidian
 vim.o.conceallevel = 2

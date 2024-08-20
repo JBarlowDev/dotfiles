@@ -4,12 +4,12 @@ local keymap = vim.api.nvim_set_keymap
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
 
-
 -- Helpers
 keymap('n', '<Leader>s', ':w<CR>', opts)
 --keymap('i', 'tn', '<ESC>', opts)
 keymap('v', '<Leader>d', '"_d', opts)
 keymap('v', '<Leader>p', '"_dP', opts)
+keymap('n', '<Leader>w', '<C-w>w', opts)
 
 -- Nvim Tree
 keymap('n', '<Leader>tt', ':NvimTreeToggle<CR>', opts)
@@ -31,6 +31,7 @@ keymap('n', '<Leader>gs', ':Telescope git_status<CR>', opts)
 keymap('n', '<Leader>fs', ':Telescope grep_string<CR>', opts)
 keymap('n', '<Leader>fw', ':Telescope workspaces<CR>', opts)
 keymap('n', '<Leader>fd', ':Telescope diagnostics<CR>', opts)
+keymap('n', '<Leader>ft', ':TodoTelescope<CR>', opts)
 
 -- Toggle term
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)

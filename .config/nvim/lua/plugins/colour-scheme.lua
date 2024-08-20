@@ -3,11 +3,11 @@ return {
     {
       "folke/tokyonight.nvim",
       name = "tokyonight",
-      enabled = false,
+      enabled = true,
       priority = 1000,
-      config = function()
-        vim.cmd([[colorscheme tokyonight-night]])
-      end,
+      -- config = function()
+      --   vim.cmd([[colorscheme tokyonight-night]])
+      -- end,
     },
   },
   {

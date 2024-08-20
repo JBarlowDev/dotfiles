@@ -6,6 +6,11 @@ return {
       defaults = {
         file_ignore_patterns = {
           ".build"
+        },
+        mappings = {
+          i = {
+            ['<esc>'] = require('telescope.actions').close
+          }
         }
       },
       mappings = {
@@ -14,13 +19,16 @@ return {
         },
         i = {
           --			["C-h"] = "which_key",
-          ['<c-d>'] = require('telescope.actions').delete_buffer
+          ['<c-d>'] = require('telescope.actions').delete_buffer,
         }
       },
       pickers = {
         buffers = {
           sort_lastused = true,
           sort_mru = true
+        },
+        colorscheme = {
+          enable_preview = true
         }
       },
       extensions = {
