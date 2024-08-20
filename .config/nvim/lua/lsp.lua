@@ -71,7 +71,7 @@ local lsp_flags = {
 }
 
 
--- TODO Move theses to seperate files
+-- TODO: Move theses to seperate files
 require('lspconfig')['lua_ls'].setup {
   on_attach = on_attach,
   flags = lsp_flags,

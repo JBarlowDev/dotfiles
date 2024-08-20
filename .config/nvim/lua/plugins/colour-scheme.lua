@@ -5,9 +5,9 @@ return {
       name = "tokyonight",
       enabled = true,
       priority = 1000,
-      -- config = function()
-      --   vim.cmd([[colorscheme tokyonight-night]])
-      -- end,
+      config = function()
+        vim.cmd([[colorscheme tokyonight-night]])
+      end,
     },
   },
   {
@@ -18,10 +18,10 @@ return {
     opts = {
       style = 'darker'
     },
-    config = function(_, opts)
-      require('onedark').setup(opts)
-      require('onedark').load()
-    end,
+    -- config = function(_, opts)
+    --   require('onedark').setup(opts)
+    --   require('onedark').load()
+    -- end,
   },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 }
