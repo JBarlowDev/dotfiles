@@ -44,5 +44,5 @@ keymap('t', '<C-w>', '<C-\\><C-n><C-w>', opts)
 -- keymap('n', '<Leader>gR', ':Telescope lsp_references<CR>', opts)
 
 
--- lsp 
+-- lsp
 -- keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
