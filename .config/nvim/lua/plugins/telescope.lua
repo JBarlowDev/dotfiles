@@ -8,18 +8,13 @@ return {
           ".build"
         },
         mappings = {
+          n = {
+            ['<c-d>'] = require('telescope.actions').delete_buffer
+          },
           i = {
-            ['<esc>'] = require('telescope.actions').close
+            ['<esc>'] = require('telescope.actions').close,
+            ['<c-d>'] = require('telescope.actions').delete_buffer
           }
-        }
-      },
-      mappings = {
-        n = {
-          ['<c-d>'] = require('telescope.actions').delete_buffer
-        },
-        i = {
-          --			["C-h"] = "which_key",
-          ['<c-d>'] = require('telescope.actions').delete_buffer,
         }
       },
       pickers = {

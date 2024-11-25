@@ -11,8 +11,8 @@ vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<C
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
+  local on_attach = function(_, _)
     protocol.CompletionItemKind = {
       '', -- Text
       '', -- Method
@@ -61,7 +61,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space><space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   --vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>gr', '<cmd>Telescope lsp_references<CR>', opts)
   -- Using conform for formatting over lsp
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space><space>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>cd', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)

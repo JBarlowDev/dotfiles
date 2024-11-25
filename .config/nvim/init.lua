@@ -3,7 +3,6 @@ require('keymap')
 require('options')
 require("lsp")
 
-
 -- Simple highlight on yank while getting used to motions
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking',

@@ -5,7 +5,11 @@ return {
       name = "tokyonight",
       enabled = true,
       priority = 1000,
+      -- opts = {
+      --   transparent = true,
+      -- },
       config = function()
+        -- require('tokyonight').setup(opts)
         vim.cmd([[colorscheme tokyonight-night]])
       end,
     },

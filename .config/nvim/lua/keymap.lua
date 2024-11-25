@@ -10,6 +10,7 @@ keymap('n', '<Leader>s', ':w<CR>', opts)
 keymap('v', '<Leader>d', '"_d', opts)
 keymap('v', '<Leader>p', '"_dP', opts)
 keymap('n', '<Leader>ww', '<C-w>w', opts)
+keymap('n', '<Leader>cc', ':noh<CR>', opts)
 
 -- Nvim Tree
 keymap('n', '<Leader>tt', ':NvimTreeToggle<CR>', opts)
