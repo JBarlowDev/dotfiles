@@ -8,10 +8,10 @@ return {
       -- opts = {
       --   transparent = true,
       -- },
-      config = function()
+      -- config = function()
         -- require('tokyonight').setup(opts)
-        vim.cmd([[colorscheme tokyonight-night]])
-      end,
+        -- vim.cmd([[colorscheme tokyonight-night]])
+      -- end,
     },
   },
   {

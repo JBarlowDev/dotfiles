@@ -13,7 +13,7 @@ keymap('n', '<Leader>ww', '<C-w>w', opts)
 keymap('n', '<Leader>cc', ':noh<CR>', opts)
 
 -- Nvim Tree
-keymap('n', '<Leader>tt', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<Leader><Leader>t', ':NvimTreeToggle<CR>', opts)
 
 -- Buffers
 keymap('n', '<Leader>bb', ':Telescope buffers<CR>', opts)
@@ -38,6 +38,9 @@ keymap('n', '<Leader>ft', ':TodoTelescope<CR>', opts)
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)
 keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 keymap('t', '<C-w>', '<C-\\><C-n><C-w>', opts)
+
+keymap('n', '<Leader><CR>', '<CMD>lua MiniJump2d.start(MiniJump2d.builtin_opts.word_start)<CR>', opts)
+
 
 -- Obsidian
 -- keymap('n', '<Leader>of', ':ObsidianQuickSwitch<CR>', opts)
