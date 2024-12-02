@@ -9,8 +9,8 @@ return {
       --   transparent = true,
       -- },
       -- config = function()
-        -- require('tokyonight').setup(opts)
-        -- vim.cmd([[colorscheme tokyonight-night]])
+      -- require('tokyonight').setup(opts)
+      -- vim.cmd([[colorscheme tokyonight-night]])
       -- end,
     },
   },
@@ -27,5 +27,17 @@ return {
     --   require('onedark').load()
     -- end,
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      custom_highlights = function(colors)
+        return {
+          MiniCursorword = { bg = colors.surface1, style = {} },
+          MiniCursorwordCurrent = { style = {} },
+        }
+      end
+    }
+  }
 }

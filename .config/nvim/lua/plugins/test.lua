@@ -8,7 +8,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
       'nvim-neotest/neotest-jest',
     },
-    config = function(_, opts)
+    config = function(_, _)
       require('neotest').setup({
         adapters = {
           require('neotest-jest')

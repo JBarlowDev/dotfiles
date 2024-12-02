@@ -26,13 +26,19 @@ return {
       require('mini.comment').setup()
 
       require('mini.jump').setup()
-      require('mini.jump2d').setup()
+      require('mini.jump2d').setup({
+
+        mappings = {
+          start_jumping = ''
+        }
+      })
       require('mini.icons').setup()
       require('mini.operators').setup({
         sort = {
           prefix = 'gb',
         }
       })
+      require('mini.cursorword').setup()
     end
   },
 }

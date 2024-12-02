@@ -1,5 +1,5 @@
-local opts = { noremap = true }
-local keymap = vim.api.nvim_set_keymap
+local opts = {  }
+local keymap = vim.keymap.set
 
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
@@ -39,7 +39,8 @@ keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)
 keymap('t', '<ESC>', '<C-\\><C-n>', opts)
 keymap('t', '<C-w>', '<C-\\><C-n><C-w>', opts)
 
-keymap('n', '<Leader><CR>', '<CMD>lua MiniJump2d.start(MiniJump2d.builtin_opts.word_start)<CR>', opts)
+keymap({"n", "v"}, '<CR>', '<CMD>lua MiniJump2d.start(MiniJump2d.builtin_opts.word_start)<CR>', opts)
+keymap({"n", "v"}, '<Leader><CR>', '<CMD>lua MiniJump2d.start(MiniJump2d.builtin_opts.single_character)<CR>', opts)
 
 
 -- Obsidian
