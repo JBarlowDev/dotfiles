@@ -39,6 +39,11 @@ return {
         }
       })
       require('mini.cursorword').setup()
+      require('mini.animate').setup({
+        cursor = {
+          enable = false
+        }
+      })
     end
   },
 }

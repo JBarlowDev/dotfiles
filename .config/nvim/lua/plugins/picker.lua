@@ -36,4 +36,20 @@ return {
   {
     'nvim-telescope/telescope-ui-select.nvim'
   },
+  {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      -- calling `setup` is optional for customization
+      require("fzf-lua").setup({})
+    end,
+    keys = {
+      {"<Leader>ff", function() require('fzf-lua').files() end, desc = "Fzf find files"},
+      {"<Leader>fg", function () require('fzf-lua').live_grep_glob() end, desc = "Fzf live grep"},
+      {"<Leader>e", function () require('fzf-lua').buffers() end, desc = "Fzf buffers"},
+      {"<Leader>fc", function () require('fzf-lua').commands() end, desc = "Fzf commands"},
+      {"<Leader>fx", function () require('fzf-lua').builtin() end, desc = "Fzf builtins (all the others)"},
+    }
+  }
 }
