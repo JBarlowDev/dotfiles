@@ -49,6 +49,7 @@ return {
       {"<Leader>fg", function () require('fzf-lua').live_grep_glob() end, desc = "Fzf live grep"},
       {"<Leader>e", function () require('fzf-lua').buffers() end, desc = "Fzf buffers"},
       {"<Leader>fc", function () require('fzf-lua').commands() end, desc = "Fzf commands"},
+      {"<Leader>fh", function () require('fzf-lua').helptags() end, desc = "Fzf helptags"},
       {"<Leader>fx", function () require('fzf-lua').builtin() end, desc = "Fzf builtins (all the others)"},
     }
   }
