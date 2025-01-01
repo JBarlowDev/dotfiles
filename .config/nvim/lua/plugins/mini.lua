@@ -44,6 +44,15 @@ return {
           enable = false
         }
       })
-    end
+    end,
+    keys = {
+      {
+        '<Leader>uta',
+        function()
+          vim.g.minianimate_disable = not vim.g.minianimate_disable
+        end,
+        desc = 'Toggle animations'
+      }
+    },
   },
 }

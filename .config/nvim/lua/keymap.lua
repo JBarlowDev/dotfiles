@@ -29,8 +29,11 @@ keymap('n', "<M-C-Right>", "<C-w>l", {desc = "Right window"})
 keymap('n', "<C-l>", "<C-w>l", {desc = "Right window"})
 
 -- UI
-keymap('n', '<Leader>ut', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<Leader>utt', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<Leader>uct', ':NvimTreeFindFile<CR>', opts)
+
+keymap('n', '<Leader>fw', function() require("workspacesFzf").workspace_switch() end, opts)
+
 
 -- Extra undo points
 keymap('i', ',', ',<C-g>u')
@@ -40,6 +43,9 @@ keymap('i', '.', '.<C-g>u')
 keymap('v', '<', '<gv')
 keymap('v', '>', '>gv')
 
+-- Lua stuff
+keymap('n', '<leader><leader>x', '<CMD>source %<CR>', {desc = "Source it"})
+
 -- Buffers
 keymap('n', '<Leader>bn', ':bn<CR>', opts)
 keymap('n', '<Leader>bp', ':bp<CR>', opts)
@@ -48,11 +54,11 @@ keymap('n', '<Leader>bd', ':bd<CR>', opts)
 keymap('n', '<Leader>bk', ':%bd<CR>', opts)
 
 -- Telescope
-keymap('n', '<Leader>gs', ':Telescope git_status<CR>', opts)
-keymap('n', '<Leader>fs', ':Telescope grep_string<CR>', opts)
-keymap('n', '<Leader>fw', ':Telescope workspaces<CR>', opts)
-keymap('n', '<Leader>fd', ':Telescope diagnostics<CR>', opts)
-keymap('n', '<Leader>ft', ':TodoTelescope<CR>', opts)
+-- keymap('n', '<Leader>gs', ':Telescope git_status<CR>', opts)
+-- keymap('n', '<Leader>fs', ':Telescope grep_string<CR>', opts)
+-- keymap('n', '<Leader>fw', ':Telescope workspaces<CR>', opts)
+-- keymap('n', '<Leader>fd', ':Telescope diagnostics<CR>', opts)
+-- keymap('n', '<Leader>ft', ':TodoTelescope<CR>', opts)
 
 -- Toggle term
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)

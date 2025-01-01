@@ -1,0 +1,19 @@
+{
+  "require": {
+    "prefix": "req",
+    "body": [
+      "require(\"${1:module}\")"
+    ],
+    "description": "Add require"
+  },
+  "local-var": {
+    "prefix": "loc",
+    "body": ["local $1 = $2"],
+    "description": "Testing stuff"
+  },
+  "inline-func": {
+    "prefix": "func",
+    "body": ["function($1) $2 end"],
+    "description": "Inline function"
+  }
+}
