@@ -32,6 +32,9 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
+      integrations = {
+        blink_cmp = true,
+      },
       custom_highlights = function(colors)
         return {
           MiniCursorword = { bg = colors.surface1, style = {} },

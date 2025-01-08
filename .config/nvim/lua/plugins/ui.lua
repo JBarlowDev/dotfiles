@@ -9,5 +9,5 @@ return {
       }
     }
   },
-  { "akinsho/bufferline.nvim", dependencies = {"nvim-tree/nvim-web-devicons"}, opts = {}},
+  { "akinsho/bufferline.nvim", enabled = false, dependencies = { "nvim-tree/nvim-web-devicons" }, opts = {} },
 }

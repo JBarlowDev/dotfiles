@@ -16,6 +16,7 @@ vim.api.nvim_create_autocmd("LspProgress", {
 return {
   {
     "folke/snacks.nvim",
+    lazy = false,
     priority = 1000,
     opts = {
       dashboard = {
@@ -37,9 +38,8 @@ return {
       notifier = {},
       notify = {},
     },
-    -- TODO: Why doens't this work?
-    -- keys = {
-    --   { "<Leader>un", function() require('snacks').notifier.show_history() end, desc = 'Show notification history' },
-    -- }
+    keys = {
+      { "<Leader>un", function() require('snacks').notifier.show_history() end, desc = 'Show notification history' },
+    }
   }
 }
