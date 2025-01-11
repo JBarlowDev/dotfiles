@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd("LspProgress", {
   end,
 })
 
+
 return {
   {
     "folke/snacks.nvim",
@@ -37,9 +38,40 @@ return {
       },
       notifier = {},
       notify = {},
+      indent = {enabled = false},
+      dim = {enabled = false, animate = {enabled = true}},
+      animate = {},
+      git = {},
+      bigfile = {},
+      scroll = {},
     },
     keys = {
       { "<Leader>un", function() require('snacks').notifier.show_history() end, desc = 'Show notification history' },
+      {
+        '<Leader>uti',
+        function()
+          local Snacks = require("snacks")
+          if (Snacks.indent.enabled) then
+            Snacks.indent.disable()
+          else
+            Snacks.indent.enable()
+          end
+        end,
+        desc = 'Toggle indent guide'
+     },
+     {
+        '<Leader>utd',
+        function()
+          local Snacks = require("snacks")
+          if (Snacks.dim.enabled) then
+            Snacks.dim.disable()
+          else
+            Snacks.dim.enable()
+          end
+        end,
+        desc = 'Toggle dim'
+      },
+      {'<Leader>gb', function() require('snacks').git.blame_line() end, desc = 'Git blame'}
     }
   }
 }

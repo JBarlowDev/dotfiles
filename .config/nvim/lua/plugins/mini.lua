@@ -38,11 +38,11 @@ return {
         }
       })
       require('mini.cursorword').setup()
-      require('mini.animate').setup({
-        cursor = {
-          enable = false
-        }
-      })
+      -- require('mini.animate').setup({
+      --   cursor = {
+      --     enable = false
+      --   }
+      -- })
     end,
     keys = {
       {
