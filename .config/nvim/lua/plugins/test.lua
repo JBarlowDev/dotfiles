@@ -11,7 +11,16 @@ return {
     config = function(_, _)
       require('neotest').setup({
         adapters = {
-          require('neotest-jest')
+          require('neotest-jest')({
+            jestConfigFile = function()
+              if vim.fn.filereadable(vim.fn.getcwd() .. "/jest/unit/jest.config.ts") then
+                vim.notify(vim.fn.getcwd() .. "/jest/unit/jest.config.ts")
+                return vim.fn.getcwd() .. "/jest/unit/jest.config.ts"
+              end
+
+              return vim.fn.getcwd() .. "/jest.config.ts"
+            end,
+          })
         },
         quickfix = {
           -- open = function()

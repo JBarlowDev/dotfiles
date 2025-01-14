@@ -19,14 +19,14 @@ end, { expr = true, desc = 'Better ESC' })
 --keymap({"n", "x"}, "<Down>", "v:count == 0 ? 'gj' : '<Down>'", {desc = "Better Down", expr = true, silent = true})
 
 -- Better(?) window movement (too many conflicting maps with os)
-keymap('n', "<M-C-Up>", "<C-w>k", {desc = "Upper window"})
-keymap('n', "<C-k>", "<C-w>k", {desc = "Upper window"})
-keymap('n', "<M-C-Down>", "<C-w>j", {desc = "Lower window"})
-keymap('n', "<C-j>", "<C-w>j", {desc = "Lower window"})
-keymap('n', "<M-C-Left>", "<C-w>h", {desc = "Left window"})
-keymap('n', "<C-h>", "<C-w>h", {desc = "Left window"})
-keymap('n', "<M-C-Right>", "<C-w>l", {desc = "Right window"})
-keymap('n', "<C-l>", "<C-w>l", {desc = "Right window"})
+keymap('n', "<M-C-Up>", "<C-w>k", { desc = "Upper window" })
+keymap('n', "<C-k>", "<C-w>k", { desc = "Upper window" })
+keymap('n', "<M-C-Down>", "<C-w>j", { desc = "Lower window" })
+keymap('n', "<C-j>", "<C-w>j", { desc = "Lower window" })
+keymap('n', "<M-C-Left>", "<C-w>h", { desc = "Left window" })
+keymap('n', "<C-h>", "<C-w>h", { desc = "Left window" })
+keymap('n', "<M-C-Right>", "<C-w>l", { desc = "Right window" })
+keymap('n', "<C-l>", "<C-w>l", { desc = "Right window" })
 
 -- UI
 keymap('n', '<Leader>utt', ':NvimTreeToggle<CR>', opts)
@@ -44,7 +44,7 @@ keymap('v', '<', '<gv')
 keymap('v', '>', '>gv')
 
 -- Lua stuff
-keymap('n', '<leader><leader>x', '<CMD>source %<CR>', {desc = "Source it"})
+keymap('n', '<leader><leader>x', '<CMD>source %<CR>', { desc = "Source it" })
 
 -- Buffers
 keymap('n', '<Leader>bn', ':bn<CR>', opts)
@@ -53,12 +53,11 @@ keymap('n', '<Leader>bl', ':bl<CR>', opts)
 keymap('n', '<Leader>bd', ':bd<CR>', opts)
 keymap('n', '<Leader>bk', ':%bd<CR>', opts)
 
--- Telescope
--- keymap('n', '<Leader>gs', ':Telescope git_status<CR>', opts)
--- keymap('n', '<Leader>fs', ':Telescope grep_string<CR>', opts)
--- keymap('n', '<Leader>fw', ':Telescope workspaces<CR>', opts)
--- keymap('n', '<Leader>fd', ':Telescope diagnostics<CR>', opts)
--- keymap('n', '<Leader>ft', ':TodoTelescope<CR>', opts)
+-- Windows
+keymap('n', '<Leader>ww', '<C-w>w', { desc = "Next Window" })
+keymap('n', '<Leader>wv', ':vsplit<CR>', { desc = "Vertical Split" })
+keymap('n', '<Leader>ws', ':split<CR>', { desc = "Horizontal Split" })
+keymap('n', '<Leader>wx', '<C-w>x', { desc = "Swap Split" })
 
 -- Toggle term
 keymap('n', '<Leader>to', ':ToggleTerm<CR>', opts)
