@@ -6,8 +6,8 @@ local keymap = vim.keymap.set
 
 
 -- Helpers
-keymap('n', '<Leader>s', ':w<CR>', opts)
-keymap('v', '<Leader>d', '"_d', opts)
+keymap('n', '<Leader>s', ':w<CR>', { desc = "Save" })
+keymap('v', '<Leader>d', '"_d', {desc = "Delete no buffer"})
 keymap('v', '<Leader>p', '"_dP', opts)
 keymap({ 'n', 'i', 's' }, '<esc>', function()
   vim.cmd("noh")
@@ -29,6 +29,7 @@ keymap('n', "<M-C-Right>", "<C-w>l", { desc = "Right window" })
 keymap('n', "<C-l>", "<C-w>l", { desc = "Right window" })
 
 -- UI
+keymap('n', '<Leader>ut', '', { desc = "Toggle" })
 keymap('n', '<Leader>utt', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<Leader>uct', ':NvimTreeFindFile<CR>', opts)
 
@@ -47,6 +48,7 @@ keymap('v', '>', '>gv')
 keymap('n', '<leader><leader>x', '<CMD>source %<CR>', { desc = "Source it" })
 
 -- Buffers
+keymap('n', '<Leader>b', '', { desc = "Buffers" })
 keymap('n', '<Leader>bn', ':bn<CR>', opts)
 keymap('n', '<Leader>bp', ':bp<CR>', opts)
 keymap('n', '<Leader>bl', ':bl<CR>', opts)
@@ -54,6 +56,7 @@ keymap('n', '<Leader>bd', ':bd<CR>', opts)
 keymap('n', '<Leader>bk', ':%bd<CR>', opts)
 
 -- Windows
+keymap('', '<Leader>w', '', { desc = "Window" })
 keymap('n', '<Leader>ww', '<C-w>w', { desc = "Next Window" })
 keymap('n', '<Leader>wv', ':vsplit<CR>', { desc = "Vertical Split" })
 keymap('n', '<Leader>ws', ':split<CR>', { desc = "Horizontal Split" })

@@ -34,6 +34,7 @@ return {
     opts = {
       integrations = {
         blink_cmp = true,
+        fzf = true,
       },
       custom_highlights = function(colors)
         return {
