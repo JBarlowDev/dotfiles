@@ -13,9 +13,9 @@ return {
         adapters = {
           require('neotest-jest')({
             jestConfigFile = function()
-              if vim.fn.filereadable(vim.fn.getcwd() .. "/jest/unit/jest.config.ts") then
-                vim.notify(vim.fn.getcwd() .. "/jest/unit/jest.config.ts")
-                return vim.fn.getcwd() .. "/jest/unit/jest.config.ts"
+              if vim.fn.filereadable(vim.fn.getcwd() .. "/jest/unit/jest.config.js") == 1 then
+                vim.notify(vim.fn.getcwd() .. "/jest/unit/jest.config.js")
+                return vim.fn.getcwd() .. "/jest/unit/jest.config.js"
               end
 
               return vim.fn.getcwd() .. "/jest.config.ts"

@@ -7,7 +7,7 @@ local keymap = vim.keymap.set
 
 -- Helpers
 keymap('n', '<Leader>s', ':w<CR>', { desc = "Save" })
-keymap('v', '<Leader>d', '"_d', {desc = "Delete no buffer"})
+keymap('v', '<Leader>d', '"_d', { desc = "Delete no buffer" })
 keymap('v', '<Leader>p', '"_dP', opts)
 keymap({ 'n', 'i', 's' }, '<esc>', function()
   vim.cmd("noh")
@@ -31,7 +31,7 @@ keymap('n', "<C-l>", "<C-w>l", { desc = "Right window" })
 -- UI
 keymap('n', '<Leader>ut', '', { desc = "Toggle" })
 keymap('n', '<Leader>utt', ':NvimTreeToggle<CR>', opts)
-keymap('n', '<Leader>uct', ':NvimTreeFindFile<CR>', opts)
+keymap('n', '<Leader>utT', ':NvimTreeFindFile<CR>', opts)
 
 keymap('n', '<Leader>fw', function() require("workspacesFzf").workspace_switch() end, opts)
 

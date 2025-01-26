@@ -38,8 +38,8 @@ return {
       },
       notifier = {},
       notify = {},
-      indent = {enabled = false},
-      dim = {enabled = false, animate = {enabled = true}},
+      indent = { enabled = false },
+      dim = { enabled = false, animate = { enabled = true } },
       animate = {},
       git = {},
       bigfile = {},
@@ -58,8 +58,8 @@ return {
           end
         end,
         desc = 'Toggle indent guide'
-     },
-     {
+      },
+      {
         '<Leader>utd',
         function()
           local Snacks = require("snacks")
@@ -71,7 +71,7 @@ return {
         end,
         desc = 'Toggle dim'
       },
-      {'<Leader>gb', function() require('snacks').git.blame_line() end, desc = 'Git blame'}
+      { '<Leader>gb', function() require('snacks').git.blame_line() end,        desc = 'Git blame' }
     }
   }
 }
