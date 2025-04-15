@@ -8,9 +8,12 @@ config.color_scheme = 'Catppuccin Mocha'
 -- Need this as otherwise doesn't open. Should be fixed in a new version soon
 config.enable_wayland = false
 
-config.font = wezterm.font('Iosevka Term', { stretch = 'Expanded' })
-config.font_size = 11
-config.line_height = 1.2
+config.font = wezterm.font_with_fallback {
+  { family = 'Iosevka Term', stretch = 'Expanded' },
+  'Hack Nerd Font'
+}
+config.font_size = 10
+config.line_height = 1.1
 
 
 config.window_background_opacity = 0.75
@@ -21,6 +24,8 @@ config.window_padding = {
   bottom = 0,
 }
 config.use_fancy_tab_bar = false
+
+config.front_end = "WebGpu"
 
 wezterm.on('update-right-status', function(window, _)
   window:set_right_status(window:active_workspace())
