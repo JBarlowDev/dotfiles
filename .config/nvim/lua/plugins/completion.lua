@@ -26,7 +26,7 @@ return {
     opts = {
       keymap = {
         preset = 'default',
-        ['<C-CR>'] = { 'select_and_accept' },
+        ['<C-y>'] = { 'select_and_accept' },
         ['<Up>'] = { 'select_prev', 'fallback' },
         ['<Down>'] = { 'select_next', 'fallback' },
       },

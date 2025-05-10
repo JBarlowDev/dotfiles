@@ -1,5 +1,5 @@
 require("mason").setup()
-require("mason-lspconfig").setup()
+-- require("mason-lspconfig").setup()
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -12,37 +12,6 @@ vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<C
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(_, bufnr)
-  -- local on_attach = function(_, _)
-  --   protocol.CompletionItemKind = {
-  --     '', -- Text
-  --     '󰊕', -- Method
-  --     '', -- Function
-  --     '', -- Constructor
-  --     '', -- Field
-  --     '', -- Variable
-  --     '', -- Class
-  --     'ﰮ', -- Interface
-  --     '', -- Module
-  --     '', -- Property
-  --     '', -- Unit
-  --     '', -- Value
-  --     '', -- Enum
-  --     '', -- Keyword
-  --     '﬌', -- Snippet
-  --     '', -- Color
-  --     '', -- File
-  --     '', -- Reference
-  --     '', -- Folder
-  --     '', -- EnumMember
-  --     '', -- Constant
-  --     '', -- Struct
-  --     '', -- Event
-  --     'ﬦ', -- Operator
-  --     '', -- TypeParameter
-  --   }
-  -- end
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -71,7 +40,7 @@ local lsp_flags = {
 
 
 -- TODO: Move theses to seperate files
-require('lspconfig')['lua_ls'].setup {
+require('lspconfig').lua_ls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   settings = {
