@@ -45,13 +45,13 @@ return {
       -- })
     end,
     keys = {
-      {
-        '<Leader>uta',
-        function()
-          vim.g.minianimate_disable = not vim.g.minianimate_disable
-        end,
-        desc = 'Toggle animations'
-      }
+      -- {
+      --   '<Leader>uta',
+      --   function()
+      --     vim.g.minianimate_disable = not vim.g.minianimate_disable
+      --   end,
+      --   desc = 'Toggle animations'
+      -- }
     },
   },
 }

@@ -1,17 +1,17 @@
--- Show lsp load progress
-vim.api.nvim_create_autocmd("LspProgress", {
-  callback = function(ev)
-    local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
-    vim.notify(vim.lsp.status(), "info", {
-      id = "lsp_progress",
-      title = "LSP Progress",
-      opts = function(notif)
-        notif.icon = ev.data.params.value.kind == "end" and " "
-            or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
-      end,
-    })
-  end,
-})
+-- -- Show lsp load progress
+-- vim.api.nvim_create_autocmd("LspProgress", {
+--   callback = function(ev)
+--     local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+--     vim.notify(vim.lsp.status(), "info", {
+--       id = "lsp_progress",
+--       title = "LSP Progress",
+--       opts = function(notif)
+--         notif.icon = ev.data.params.value.kind == "end" and " "
+--             or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+--       end,
+--     })
+--   end,
+-- })
 
 
 return {
@@ -40,7 +40,6 @@ return {
       notify = {},
       indent = { enabled = false },
       dim = { enabled = false, animate = { enabled = true } },
-      animate = {},
       git = {},
       bigfile = {},
       scroll = {},
@@ -71,7 +70,10 @@ return {
         end,
         desc = 'Toggle dim'
       },
-      { '<Leader>gb', function() require('snacks').git.blame_line() end,        desc = 'Git blame' }
+      { '<Leader>gb', function() require('snacks').git.blame_line() end,        desc = 'Git blame' },
+      { '<Leader>x', function() require('snacks').explorer() end,        desc = 'File Explorer' },
+      { '<Leader><Leader>x', function() require('snacks').explorer.reveal() end,        desc = 'File Explorer' },
+
     }
   }
 }

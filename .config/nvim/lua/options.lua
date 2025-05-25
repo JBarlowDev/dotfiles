@@ -14,5 +14,9 @@ vim.o.colorcolumn = '120'
 
 vim.o.autoindent = true
 
+vim.o.cursorline = true
+
+vim.o.confirm = true
+
 -- For obsidian
 vim.o.conceallevel = 2

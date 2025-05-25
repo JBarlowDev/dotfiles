@@ -12,5 +12,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.diagnostic.config({ virtual_lines = { current_line = true } })
+
 vim.cmd.colorscheme "catppuccin-mocha"
 
