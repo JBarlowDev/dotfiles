@@ -13,6 +13,21 @@ local M = {
   },
   { "akinsho/bufferline.nvim", enabled = false, dependencies = { "nvim-tree/nvim-web-devicons" }, opts = {} },
   {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
+    main = 'lualine',
+    opts = {
+      sections = {
+        lualine_a = { 'mode', 'searchcount' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { {'filename', path = 1} },
+        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_y = { 'lsp_status' },
+        lualine_z = { 'location' }
+      },
+    }
+  },
+  {
     "folke/noice.nvim",
     opts = {
       lsp = {

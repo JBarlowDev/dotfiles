@@ -35,7 +35,8 @@ return {
       require('mini.operators').setup({
         sort = {
           prefix = 'gb',
-        }
+        },
+        replace = { prefix = 'gn' } -- TODO: Find a better mapping for this one
       })
       require('mini.cursorword').setup()
       -- require('mini.animate').setup({

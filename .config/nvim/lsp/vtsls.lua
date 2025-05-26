@@ -9,6 +9,10 @@ return {
         propertyDeclarationTypes = { enabled = true },
         variableTypes = { enabled = false },
       },
+    },
+    vtsls = {
+      autoUseWorkspaceTsdk = true,
+      enableMoveToFileCodeAction = true,
     }
   }
 }

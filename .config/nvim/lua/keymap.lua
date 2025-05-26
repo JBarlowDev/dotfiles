@@ -33,7 +33,7 @@ keymap('n', '<Leader>ut', '', { desc = "Toggle" })
 keymap('n', '<Leader>utt', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<Leader>utT', ':NvimTreeFindFile<CR>', opts)
 
-keymap('n', '<Leader>fw', function() require("workspacesFzf").workspace_switch() end, opts)
+keymap('n', '<Leader>fw', function() require("workspacesFzf").workspace_switch() end, {desc = "Find Workspace"})
 
 
 -- Extra undo points

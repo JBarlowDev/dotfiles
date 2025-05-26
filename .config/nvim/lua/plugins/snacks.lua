@@ -70,7 +70,7 @@ return {
         end,
         desc = 'Toggle dim'
       },
-      { '<Leader>gb', function() require('snacks').git.blame_line() end,        desc = 'Git blame' },
+      -- { '<Leader>gb', function() require('snacks').git.blame_line() end,        desc = 'Git blame' },
       { '<Leader>x', function() require('snacks').explorer() end,        desc = 'File Explorer' },
       { '<Leader><Leader>x', function() require('snacks').explorer.reveal() end,        desc = 'File Explorer' },
 
