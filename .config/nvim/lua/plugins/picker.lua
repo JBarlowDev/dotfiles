@@ -61,7 +61,7 @@ return {
       -- end)
     end,
     keys = {
-      { "<Leader>ff", function() require('fzf-lua').files() end,                                        desc = "Fzf find files" },
+      { "<Leader>ff", function() require('fzf-lua').files({ follow = true }) end,                       desc = "Fzf find files" },
       { "<Leader>fg", function() require('fzf-lua').live_grep_glob() end,                               desc = "Fzf live grep" },
       { "<Leader>fg", function() require('fzf-lua').grep_visual() end,                                  desc = "Fzf grep visual",              mode = 'v' },
       { "<Leader>fs", function() require('fzf-lua').grep_cword() end,                                   desc = "Fzf live grep" },
@@ -84,7 +84,7 @@ return {
     },
     keys = {
       -- { "<Leader>e",  function() require('fzf-lua').buffers() end,       desc = "Fzf buffers" },
-      { "<leader>e", function() require("snacks").picker.buffers({current = false}) end, desc = "Buffers" }
+      { "<leader>e", function() require("snacks").picker.buffers({ current = false }) end, desc = "Buffers" }
     }
 
   }
