@@ -1,0 +1,9 @@
+font-family = Iosevka-Term 
+font-size = 10
+
+theme = Catppuccin Mocha
+
+background-opacity = 0.75
+
+keybind = ctrl+enter=unbind
+
