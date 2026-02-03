@@ -1,0 +1,25 @@
+* {
+    font-family: 'Hack Nerd';
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+label.module {
+  /* border: 1px solid white; */
+  padding: 2px 5px;
+}
+
+box.module {
+  /* border: 1px solid red; */
+  padding: 2px 5px;
+}
+
+#workspaces button {
+  background-color: #89b4fa;
+}
+
+#workspaces button.active {
+  background-color: #f38ba8;
+}
