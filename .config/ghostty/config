@@ -7,3 +7,5 @@ background-opacity = 0.75
 
 keybind = ctrl+enter=unbind
 
+window-width=3200
+window-height=1600
