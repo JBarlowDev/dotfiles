@@ -3,6 +3,9 @@ return {
     Lua = {
       diagnostics = {
         globals = { 'vim', 'use' },
+        -- neededFileStatus = {
+        --   ["codestyle-check"] = "Any",
+        -- },
       }
     }
   }

@@ -1,7 +1,6 @@
-require('lazyconf')
-require('keymap')
 require('options')
-require("lsp")
+require('keymap')
+require('lsp')
 
 -- Simple highlight on yank while getting used to motions
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -13,6 +12,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.diagnostic.config({ virtual_lines = { current_line = true } })
-
-vim.cmd.colorscheme "catppuccin-mocha"
-

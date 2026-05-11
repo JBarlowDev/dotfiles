@@ -33,7 +33,7 @@ keymap('n', '<Leader>ut', '', { desc = "Toggle" })
 keymap('n', '<Leader>utt', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<Leader>utT', ':NvimTreeFindFile<CR>', opts)
 
-keymap('n', '<Leader>fw', function() require("workspacesFzf").workspace_switch() end, {desc = "Find Workspace"})
+keymap('n', '<Leader>fw', function() require("workspacesFzf").workspace_switch() end, { desc = "Find Workspace" })
 
 
 -- Extra undo points
@@ -69,7 +69,6 @@ keymap('t', '<C-w>', '<C-\\><C-n><C-w>', opts)
 
 keymap({ "n", "v" }, '<CR>', '<CMD>lua MiniJump2d.start(MiniJump2d.builtin_opts.word_start)<CR>', opts)
 keymap({ "n", "v" }, '<Leader><CR>', '<CMD>lua MiniJump2d.start(MiniJump2d.builtin_opts.single_character)<CR>', opts)
-
 
 -- Quickfix
 keymap('n', '<Leader>qo', ':copen<CR>', opts)

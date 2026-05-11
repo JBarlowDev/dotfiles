@@ -2,8 +2,9 @@ local opts = { noremap = true, silent = true }
 local capabilities = vim.tbl_deep_extend(
   "force",
   {},
-  vim.lsp.protocol.make_client_capabilities(),
-  require("blink.cmp").get_lsp_capabilities()
+  vim.lsp.protocol.make_client_capabilities()
+ -- require("blink.cmp").get_lsp_capabilities()
+ -- TODO: Add back in blink
 )
 
 vim.lsp.config('*', {
@@ -39,5 +40,5 @@ vim.lsp.config('*', {
 -- })
 --
 
-vim.lsp.enable('vtsls')
+-- vim.lsp.enable('vtsls')
 vim.lsp.enable('lua_ls')

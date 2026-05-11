@@ -1,4 +1,6 @@
---vim.cmd "colorscheme nightfox"
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = "a"
@@ -10,7 +12,7 @@ vim.o.shell = "zsh"
 
 vim.o.clipboard = "unnamedplus"
 
-vim.o.colorcolumn = '120'
+vim.o.colorcolumn = '140'
 
 vim.o.autoindent = true
 
