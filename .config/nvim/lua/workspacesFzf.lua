@@ -1,7 +1,7 @@
 local M = {}
 
-local workspaces = require("workspaces")
-local fzfLua = require("fzf-lua")
+local workspaces = require('workspaces')
+local fzfLua = require('fzf-lua')
 
 function M.workspace_switch()
   local opts = {}
@@ -21,4 +21,3 @@ function M.workspace_switch()
 end
 
 return M
-
