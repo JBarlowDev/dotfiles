@@ -9,7 +9,7 @@ require('snacks').setup({
       keys = {
         { icon = '', key = 'f', desc = 'Find File',      action = '<leader>ff' },
         { icon = '', key = 'w', desc = 'Find Workspace', action = '<leader>fw' },
-        { icon = '', key = 'l', desc = 'Open Lazy',      action = ':Lazy' },
+        { icon = '', key = 'u', desc = 'Vim pack update',action = ':lua vim.pack.update()' },
         { icon = '', key = 'm', desc = 'Open Mason',     action = ':Mason' },
         { icon = '', key = 'q', desc = 'Quit',           action = ':q' },
       },
