@@ -4,6 +4,8 @@
 #
 # swww img "$initial" 
 
+awww img $HOME/Wallpapers/wallhaven-1jod8v.png
+
 while true; do 
 
 
@@ -13,7 +15,7 @@ while true; do
     wallpaper="$(find -L ~/Wallpapers -maxdepth 1 -type f | shuf -n 1)"
   fi
 
-  swww img "$wallpaper" --transition-type wipe
+  awww img "$wallpaper" --transition-type wipe
 
   sleep 60
 
