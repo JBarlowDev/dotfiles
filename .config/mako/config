@@ -1,0 +1,15 @@
+width=500
+height=300
+border-radius=10
+#default-timeout=5000
+outer-margin=24
+padding=8
+
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89dceb
+progress-color=over #313244
+
+[urgency=high]
+border-color=#fab387
