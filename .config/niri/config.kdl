@@ -282,11 +282,10 @@ layout {
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
 spawn-at-startup "waybar"
-spawn-at-startup "mako"
 
 spawn-at-startup "awww-daemon"
-spawn-sh-at-startup "~/.config/niri/switch.sh 0"
-
+// spawn-sh-at-startup "systemctl --user start stixChangeBackground.timer"
+spawn-sh-at-startup "ln -sfn ~/wallpapers/main/ ~/wallpapers/current;~/.config/niri/switch.sh"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -641,6 +640,7 @@ binds {
 
 
 
-    Mod+F11 { spawn-sh "~/.config/niri/switch.sh 0"; }
-    Mod+F12 { spawn-sh "~/.config/niri/switch.sh 1"; }
+    Mod+F11 { spawn-sh "ln -sfn ~/wallpapers/main ~/wallpapers/current;~/.config/niri/switch.sh"; }
+    Mod+F12 { spawn-sh "ln -sfn ~/wallpapers/extra ~/wallpapers/current;~/.config/niri/switch.sh"; }
+    // Mod+F12 { spawn-sh "~/.config/niri/switch.sh 1"; }
 }
