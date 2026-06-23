@@ -1,0 +1,6 @@
+[Unit]
+Description=Change background on a timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/stix/scripts/changeBackground.sh
