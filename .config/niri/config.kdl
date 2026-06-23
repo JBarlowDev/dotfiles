@@ -282,6 +282,7 @@ layout {
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
 spawn-at-startup "waybar"
+spawn-at-startup "mako"
 
 spawn-at-startup "awww-daemon"
 spawn-sh-at-startup "~/.config/niri/switch.sh 0"
