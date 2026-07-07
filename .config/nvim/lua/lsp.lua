@@ -1,4 +1,4 @@
--- TODO: Work out what I'm doing with this logic. Should this be loaded after my plugins? In general seems to work and lsp config is 
+-- TODO: Work out what I'm doing with this logic. Should this be loaded after my plugins? In general seems to work and lsp config is
 -- working correctly etc but causes issues trying to access blink etc.
 
 local opts = { noremap = true, silent = true }
@@ -43,3 +43,4 @@ vim.api.nvim_set_keymap('n', '<space>cd', '<cmd>lua vim.diagnostic.open_float()<
 -- vim.lsp.enable('vtsls')
 vim.lsp.enable('pyright')
 vim.lsp.enable('lua_ls')
+vim.lsp.enable('jdtls')

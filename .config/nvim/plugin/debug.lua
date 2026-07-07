@@ -9,7 +9,6 @@ vim.pack.add({
 -- TODO: I've not looked at any of the options here yet to see what can be changed
 require('dapui').setup()
 require("nvim-dap-virtual-text").setup()
-
 require('dap-python').setup('python3')
 
 local keymap = vim.keymap.set
