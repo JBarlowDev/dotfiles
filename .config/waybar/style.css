@@ -1,25 +1,59 @@
+@import "./colours.css";
+
 * {
     font-family: 'Hack Nerd';
 }
 
 window#waybar {
-    background-color: transparent;
+  /* background-color: @base; */
+  /* border-radius: 16px; */
+  background-color: transparent;
 }
 
-label.module {
+.modules-center {
+  background-color: @surface0;
+  border-radius: 8px;
+  padding: 2px 8px;
+  margin: 8px 0px;
+}
+
+.modules-right {
+  /* border: 1px solid @sky; */
+  padding: 2px 8px;
+  background-color: @surface0;
+  border-radius: 8px;
+  margin: 8px 24px 8px 0px;
+  /* margin-right: 24px; */
+}
+
+/* .modules-left, */
+/* .modules-center, */
+/* .modules-right { */
+/*   opacity: 1; */
+/* } */
+
+label.module:first-child {
   /* border: 1px solid white; */
-  padding: 2px 5px;
+
 }
 
 box.module {
-  /* border: 1px solid red; */
-  padding: 2px 5px;
+  /* padding: 2px 5px; */
 }
 
+
+
+
 #workspaces button {
-  background-color: #89b4fa;
+  background-color: @base;
 }
 
 #workspaces button.active {
-  background-color: #f38ba8;
+  background-color: @sky;
+}
+
+#pulseaudio {
+  /* border-radius: 10px 0px 0px 10px; */
+  padding-right: 4px;
+  border-right: 1px solid @red;
 }
